@@ -41,8 +41,8 @@ var getAppVersion = function (success, fail) {
   return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
-getAppVersion.checkVersion = function (success, fail) {
-  return getPromisedCordovaExec('checkVersion', success, fail);
+getAppVersion.checkUpdate = function (success, fail) {
+  return getPromisedCordovaExec('checkUpdate', success, fail);
 };
 
 getAppVersion.getAppName = function (success, fail) {
