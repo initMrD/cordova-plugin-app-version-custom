@@ -38,7 +38,7 @@ public class AppVersion extends CordovaPlugin {
     InputStream is = null;
     try {
       Log.d("verion","enter"+action);
-      if (action.equals("checkVersion")) {
+      if (action.equals("checkUpdate")) {
         Log.d("verion","enter");
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         String mVersion = packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName;
