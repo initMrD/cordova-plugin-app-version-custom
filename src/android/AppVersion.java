@@ -43,7 +43,7 @@ public class AppVersion extends CordovaPlugin {
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         String mVersion = packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName;
         try{
-          String path = "https://od.lk/s/MTVfMTcxMzIwNF8/version-jt.xml";//更新检查文件地址
+          String path = "https://dn-ouyeel.qbox.me/ouyeeljt-android.xml";//更新检查文件地址
           URL url = new URL(path);
           HttpURLConnection conn = (HttpURLConnection) url.openConnection();
           conn.setConnectTimeout(5000);
