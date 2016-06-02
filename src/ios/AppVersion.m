@@ -2,7 +2,7 @@
 #import <Cordova/CDVPluginResult.h>
 
 
-#define VERSION_CHECK_URL @"https://o78xagd1m.qnssl.com/com.bsteel.ouyeeljt.plist"  //辅助文件
+#define VERSION_CHECK_URL @"https://od.lk/s/MTVfMTcxMzIwM18/com.bsteel.ouyeeljt.plist"  //辅助文件
 
 @implementation AppVersion
 
