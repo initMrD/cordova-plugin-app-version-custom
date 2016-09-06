@@ -10,15 +10,4 @@
 
 #### cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git
 
-
-
-
-
-注意事项：如需修改检查更新文件地址
-
-android:
-在cordova-plugin-app-version\src\android\AppVersion.java第46行处修改
-
-ios:
-在cordova-plugin-app-version\src\ios\AppVersion.m第五行处修改
-
+cordova.getAppVersion.checkUpdate("这里传入xml或者plisturl");
