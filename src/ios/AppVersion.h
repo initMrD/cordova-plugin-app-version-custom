@@ -2,6 +2,12 @@
 
 @interface AppVersion : CDVPlugin
 
+@property(nonatomic,copy) NSString* plistUrl;
+
+- (void)setPlistUrl:(NSString *)plistUrl;
+
+- (NSString*) plistUrl;
+
 - (void)getAppName:(CDVInvokedUrlCommand*)command;
 
 - (void)getPackageName:(CDVInvokedUrlCommand*)command;

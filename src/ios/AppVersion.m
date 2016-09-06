@@ -2,8 +2,6 @@
 #import <Cordova/CDVPluginResult.h>
 
 
-#define VERSION_CHECK_URL @"https://dn-ouyeel.qbox.me/ouyeeljt-IOS.plist"  //辅助文件
-
 @implementation AppVersion
 
 - (void)getAppName : (CDVInvokedUrlCommand *)command
@@ -48,6 +46,8 @@
 }
 
 - (void)checkUpdate:(CDVInvokedUrlCommand*)command{
+    self.plistUrl = command.arguments[0];
+    NSLog(@"%@=================================",self.plistUrl);
     NSString* callbackId = command.callbackId;
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     
@@ -68,7 +68,7 @@
     BOOL forceUpdate = NO;
 
     NSString *returnString = @"";
-    NSString *plist_url = VERSION_CHECK_URL;
+    NSString *plist_url = self.plistUrl;
     NSString *updateMsg;
     //	forceUpdate = flag;
     NSString *currentVer = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
@@ -120,7 +120,8 @@
     NSLog(@"%ld",(long)buttonIndex);
     if (buttonIndex == 1){  //下载更新
         NSLog(@"buttonIndex==========openURL");
-        NSURL *url  = [NSURL URLWithString:[NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",VERSION_CHECK_URL]];
+        NSLog(@"%@",self.plistUrl);
+        NSURL *url  = [NSURL URLWithString:[NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",self.plistUrl]];
         [[UIApplication sharedApplication] openURL:url];
         exit(0);
         

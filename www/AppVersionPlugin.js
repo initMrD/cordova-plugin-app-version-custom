@@ -3,7 +3,7 @@
 "use strict";
 
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
-var getPromisedCordovaExec = function (command, success, fail) {
+var getPromisedCordovaExec = function (command, success, fail ,data) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
     if (window.jQuery) {
@@ -33,7 +33,7 @@ var getPromisedCordovaExec = function (command, success, fail) {
     }
   }
   // 5th param is NOT optional. must be at least empty array
-  cordova.exec(success, fail, "AppVersion", command, []);
+  cordova.exec(success, fail, "AppVersion", command, [data]);
   return toReturn;
 };
 
@@ -41,8 +41,8 @@ var getAppVersion = function (success, fail) {
   return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
-getAppVersion.checkUpdate = function (success, fail) {
-  return getPromisedCordovaExec('checkUpdate', success, fail);
+getAppVersion.checkUpdate = function (url ,success, fail) {
+  return getPromisedCordovaExec('checkUpdate', success, fail , url);
 };
 
 getAppVersion.getAppName = function (success, fail) {

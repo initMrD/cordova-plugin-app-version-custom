@@ -39,11 +39,11 @@ public class AppVersion extends CordovaPlugin {
     try {
       Log.d("verion","enter"+action);
       if (action.equals("checkUpdate")) {
-        Log.d("verion","enter");
+        Log.d("verion","Url:"+args.toString());
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         String mVersion = packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName;
         try{
-          String path = "https://dn-ouyeel.qbox.me/ouyeeljt-android.xml";//更新检查文件地址
+          String path = args.get(0).toString();//更新检查文件地址
           URL url = new URL(path);
           HttpURLConnection conn = (HttpURLConnection) url.openConnection();
           conn.setConnectTimeout(5000);
