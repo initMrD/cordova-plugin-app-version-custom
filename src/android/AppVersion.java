@@ -4,22 +4,19 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.util.Xml;
-import android.widget.Toast;
-import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.PackageManager;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.*;
@@ -215,8 +212,15 @@ public class AppVersion extends CordovaPlugin {
         //获取到文件的大小
         pd.setMax(conn.getContentLength());
         InputStream is = conn.getInputStream();
-        File file = new File(Environment.getExternalStorageDirectory(), "updata.apk");
-        FileOutputStream fos = new FileOutputStream(file);
+        File file = null;
+        FileOutputStream fos = null;
+        try{
+          file = new File(Environment.getExternalStorageDirectory(), "updata.apk");
+          fos = new FileOutputStream(file);
+        }catch (FileNotFoundException e){
+          file = new File(Environment.getDownloadCacheDirectory(), "updata.apk");
+          fos = new FileOutputStream(file);
+        }
         BufferedInputStream bis = new BufferedInputStream(is);
         byte[] buffer = new byte[1024];
         int len ;
