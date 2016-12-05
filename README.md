@@ -4,7 +4,12 @@
 
 ### 将原有的cordova-plugin-app-version删除：
 
-#### cordova plugin rm cordova-plugin-app-version
+<pre>
+  <code>
+    #### cordova plugin rm cordova-plugin-app-version
+  </code>
+</pre>
+
 
 ### 加入新的cordova-plugin-app-version-custom：
 
