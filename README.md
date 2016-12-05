@@ -5,17 +5,19 @@
 ### 将原有的cordova-plugin-app-version删除：
 
 <pre>
-  <code>
-    #### cordova plugin rm cordova-plugin-app-version
-  </code>
+  <code>cordova plugin rm cordova-plugin-app-version</code>
 </pre>
 
 
 ### 加入新的cordova-plugin-app-version-custom：
 
-#### cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git
+<pre>
+  <code>cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git</code>
+</pre>
 
-cordova.getAppVersion.checkUpdate("这里传入xml或者plist的url");
+<pre>
+  <code>cordova.getAppVersion.checkUpdate("这里传入xml或者plist的url");</code>
+</pre>
 
 xml参考：
 http://7xv1nq.com1.z0.glb.clouddn.com/update-android.xml
@@ -28,11 +30,16 @@ http://7xv1nq.com1.z0.glb.clouddn.com/update-IOS.plist
 ## Usage：
 
 ### delete old plugin：
-
-#### cordova plugin rm cordova-plugin-app-version
+<pre>
+  <code>cordova plugin rm cordova-plugin-app-version</code>
+</pre>
 
 ### use new plugin：
 
-#### cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git
+<pre>
+  <code>cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git</code>
+</pre>
 
-cordova.getAppVersion.checkUpdate("your xml file or plist file url");
+<pre>
+  <code>cordova.getAppVersion.checkUpdate("your xml file or plist file url");</code>
+</pre>
