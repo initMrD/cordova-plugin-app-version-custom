@@ -11,3 +11,9 @@
 #### cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git
 
 cordova.getAppVersion.checkUpdate("这里传入xml或者plist的url");
+
+xml参考：
+http://7xv1nq.com1.z0.glb.clouddn.com/update-android.xml
+
+plist参考：
+http://7xv1nq.com1.z0.glb.clouddn.com/update-IOS.plist
