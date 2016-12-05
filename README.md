@@ -3,18 +3,14 @@
 ## 使用方法：
 
 ### 将原有的cordova-plugin-app-version删除：
-
 <pre>
   <code>cordova plugin rm cordova-plugin-app-version</code>
 </pre>
-
-
 ### 加入新的cordova-plugin-app-version-custom：
-
 <pre>
   <code>cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git</code>
 </pre>
-
+### 在你的js代码中调用：
 <pre>
   <code>cordova.getAppVersion.checkUpdate("这里传入xml或者plist的url");</code>
 </pre>
@@ -33,13 +29,11 @@ http://7xv1nq.com1.z0.glb.clouddn.com/update-IOS.plist
 <pre>
   <code>cordova plugin rm cordova-plugin-app-version</code>
 </pre>
-
 ### use new plugin：
-
 <pre>
   <code>cordova plugin add https://github.com/initMrD/cordova-plugin-app-version-custom.git</code>
 </pre>
-
+### your js code:
 <pre>
   <code>cordova.getAppVersion.checkUpdate("your xml file or plist file url");</code>
 </pre>
