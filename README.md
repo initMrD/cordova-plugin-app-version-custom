@@ -16,7 +16,12 @@
 </pre>
 
 xml参考：
-http://7xv1nq.com1.z0.glb.clouddn.com/update-android.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <version>2.0</version>
+    <description>有新的版本了，赶快来下载吧！</description>
+    <url>http://xxx.xxxx.xx</url>
+</info>
 
 plist参考：
 http://7xv1nq.com1.z0.glb.clouddn.com/update-IOS.plist
